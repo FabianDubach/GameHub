@@ -22,7 +22,7 @@ def start_game():
     text_entry.grid(row=2, pady=10)
     
     # Submit button to validate the guess
-    submit_btn = tk.Button(root, text="Submit", command=validate_guess, font=("Arial", 12))
+    submit_btn = tk.Button(root, text="Submit", command=lambda: validate_guess, font=("Arial", 12))
     submit_btn.grid(row=3, pady=10)
     
     # Keep the Exit button in place
@@ -101,13 +101,9 @@ def create_game_window():
     # Exit button to close the game
     btn_exit = tk.Button(root, text="Exit", command=exit_game, font=("Arial", 12))
     btn_exit.grid(row=3, pady=10)
+    
 
-
-def main():
+if __name__ == "__main__":
     play_music()
     create_game_window()
     root.mainloop()
-
-
-if __name__ == "__main__":
-    main()

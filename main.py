@@ -17,6 +17,9 @@ def open_dino_game():
     root.withdraw()
     subprocess.Popen(["games\\dino_game\\dinoGame.exe"], creationflags=subprocess.CREATE_NEW_CONSOLE).wait()
     root.deiconify()
+    
+def open_rock_paper_scissors():
+    return
 
 # Create main window
 root = tk.Tk()
@@ -57,6 +60,9 @@ btn_game2.pack(pady=10)
 
 btn_game3 = tk.Button(frame, text="Dino Game", command=open_dino_game, **button_style)
 btn_game3.pack(pady=10)
+
+btn_game4 = tk.Button(frame, text="Rock, Paper & Scissors", command=open_rock_paper_scissors, **button_style)
+btn_game4.pack(pady=10)
 
 # Exit Button
 btn_exit = tk.Button(root, text="Exit", command=root.quit, **exit_button_style)
