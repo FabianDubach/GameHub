@@ -19,12 +19,20 @@ def open_dino_game():
     root.deiconify()
     
 def open_rock_paper_scissors():
-    return
+    root.withdraw()
+    subprocess.Popen(["python", "games\\rock_paper_scissors\\rock_paper_scissors.py"]).wait()
+    root.deiconify()
+    
+def open_cookie_clicker():
+    root.withdraw()
+    subprocess.Popen(["python", "games\\cookie_clicker\\cookie_clicker.py"]).wait()
+    root.deiconify()
+    
 
 # Create main window
 root = tk.Tk()
 root.title("GameHub")
-root.geometry("500x400")
+root.geometry("500x600")
 root.configure(bg="#2C2F33")
 
 # Styling
@@ -63,6 +71,9 @@ btn_game3.pack(pady=10)
 
 btn_game4 = tk.Button(frame, text="Rock, Paper & Scissors", command=open_rock_paper_scissors, **button_style)
 btn_game4.pack(pady=10)
+
+btn_game5 = tk.Button(frame, text="Cookie Clicker", command=open_cookie_clicker, **button_style)
+btn_game5.pack(pady=10)
 
 # Exit Button
 btn_exit = tk.Button(root, text="Exit", command=root.quit, **exit_button_style)
